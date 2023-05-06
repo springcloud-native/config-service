@@ -3,7 +3,8 @@ custom_build(
     # Name of the container image
     ref = 'config-service',
     # Command to build the container image
-    command = './gradlew bootBuildImage --imageName $EXPECTED_REF',
+    # command = './gradlew bootBuildImage --imageName $EXPECTED_REF',
+    command = 'gradlew bootBuildImage --imageName ghcr.io/sudarshangrdy/config-service --publishImage -PregistryUrl=ghcr.io -PregistryUsername=sudarshangrdy -PregistryToken=ghp_',
     # Files to watch that trigger a new build
     deps = ['build.gradle', 'src']
 )
